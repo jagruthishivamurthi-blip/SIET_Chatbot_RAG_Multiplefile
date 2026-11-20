@@ -1,1 +1,1 @@
-This folder contain all the collage files
+This folder contain all the college files
