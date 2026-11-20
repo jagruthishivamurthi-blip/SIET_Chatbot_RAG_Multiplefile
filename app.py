@@ -2,14 +2,13 @@ import streamlit as st
 from rag_engine import load_base, ask_rag
 st.set_page_config(page_title = "SIET_Chatbot", layout = "centered")
 st.title("SIET-Chatbot")
-st.caption("Ask anything about college infprmation")
-st.caption("Created by BHAVANA J")
-
-my_key = st.secrets["GROQ_API_KEY"]
+st.caption("Ask anything about college Information process, Course, Placements, FIQs, Rules and regulation ")
+st.caption("RAG pipeline with Multiple files")
+st.cation("created by JAGRUTHI H G")
 
 @st.cache_resource
 def initiate_rag():
-  return load_base("01_College_Information.pdf")
+  return load_base("College_docs")
 
 index, embed_model, chunks = initiate_rag()
 if "chat_hist" not in st.session_state:   #load and display chat history if exsit if not create new
