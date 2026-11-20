@@ -4,7 +4,7 @@ st.set_page_config(page_title="SIET_Chatbot", layout="centered")
 st.title("SIET-Chatbot")
 st.caption("Ask anything about college information, course info, rules, FAQs, placement info")
 st.caption("RAG Pipeline with multiple files")
-st.caption("Launched by BHAVANA J")
+st.caption("Launched by JAGRUTHI H G")
 my_key = st.secrets["GROQ_API_KEY"]
 @st.cache_resource
 def initiate_rag():
@@ -43,25 +43,3 @@ if question:
 if st.button("Clear chat"):
     st.session_state.chat_hist = []
     st.rerun()
-[3:38 pm, 20/11/2026] Bhavana Siet: import faiss
-import numpy as np
-from groq import Groq
-from pypdf import PdfReader
-from sentence_transformers import SentenceTransformer
-from pathlib import Path
-
-
-# Load PDF
-def load_pdf(pdf_path):
-    reader = PdfReader(str(pdf_path))
-    mypages = [page.extract_text() or "" for page in reader.pages]
-    full_text = "\n".join(mypages).strip()
-
-    if not full_text:
-        raise ValueError(f"No readable text found in {pdf_path}")
-
-    return full_text
-
-
-# Create text chunks
-def create_chunks(full_text, chunksize=500, ov
