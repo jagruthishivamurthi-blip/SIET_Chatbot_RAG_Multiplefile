@@ -59,7 +59,7 @@ def load_base(pdf_path="college_docs"):
     pdf_folder = Path(__file__).resolve().parent / pdf_path
 
     if not pdf_folder.exists():
-        raise ValueError("collage_docs folder not found")
+        raise ValueError("college_docs folder not found")
 
     pdf_files = [
         file for file in pdf_folder.iterdir()
